@@ -1,0 +1,42 @@
+/usr/libexec/java_home -v 1.7
+/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home
+/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/security/
+
+parametry PRZED nazwa uruchamianej klasy!!
+javac -cp  -Djava.security.manager -Djava.security.policy=simple.policy AuthCostam
+
+Java Web Start - stosowane są security.manager i polityki
+
+JCE - ograniczenie siły aglorytmow w standardowej Javie
+
+JCA/JCE - interfejsy klas krypto
+
+CSP - crypto
+
+
+
+
+
+
+poufnosc, uwierzytelnienie, niezaprzeczalnosc, integralnosc
+
+
+
+tabela - jakie algorymy rekomendowane
+
+salt jawnie w bazie
+
+parametr 65550 - przy wyliczaniu HMAC'a - sztuczne liczenie hasza 65550 razy zeby przedluzyc trwanie
+
+atak czasowy - secure random w podpisach elektronicznych
+
+
+Cache bazy na dysku - podpisywać (objectSigning) dane po deserializacji
+
+Dane wrażliwe przechowywać w tablicach (typach prostych: char[]) i zerować, bo garbage collector nie zapewnia skutecznego usuwania danych
+
+Szyfrowanie kluczy transportowych - zawsze WRAP/UNWRAP
+
+HSM - hardwarowy moduł bezpieczeństwa
+
+KeyStore - uzywac repozytoriow softwarowych

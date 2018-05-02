@@ -1,0 +1,4 @@
+logme () { export SCRIPTFILE="$(date +%s)-${$}" echo "Starting tty logging to ~/scripts/${SCRIPTFILE}..." script -c /bin/bash -q "~/scripts/${SCRIPTFILE}" } scriptfile () { echo "${SCRIPTFILE}"; }
+
+
+## script, opens a new shell but output goes to file

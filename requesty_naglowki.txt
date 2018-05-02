@@ -1,0 +1,29 @@
+# minimalny request GET interpretowalny przez serwer
+
+
+GET /ENDPOINT/PATH&KEY=VALUE HTTP/1.1
+Host: dawidbalut.com
+enter
+enter
+
+# minimalny request POST interpretowalny przez serwer
+
+POST /ENDPOINT/ENDPOINT2 HTTP/1.1
+Host: dawidbalut.com
+Content-length: 25000
+
+
+key=value
+
+
+Porównywanie Content-length odpowiedzi - różnice sugerują zmianę zachowania (błąd)
+
+
+
+Flagi
+
+# WYmusza https dl akażdego requestu
+strict-transport-security:15435345345
+
+# Nie pozwala wysłać ciastka po http
+Secure

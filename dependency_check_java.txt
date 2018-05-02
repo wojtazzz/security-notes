@@ -1,0 +1,4 @@
+brew list | grep dependency-check
+
+dependency-check --project Dep-check-project --scan .
+

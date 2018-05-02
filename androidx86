@@ -1,0 +1,84 @@
+-------------------------------------------------------------------------
+
+## Protobuf Decoder for BURP
+https://www.reddit.com/r/pokemongodev/comments/4scqc2/instructions_for_setting_up_burp_to_sniff/
+http://www.tssci-security.com/archives/2013/05/30/decoding-and-tampering-protobuf-serialized-messages-in-burp/
+#How someone handled too long proto files:
+http://blog.includesecurity.com/2014_07_01_archive.html
+
+
+/usr/local/Cellar/jython/2.7.0/libexec/jython.jar
+or /usr/local/bin/jython-standalone-2.7.0.jar
+
+
+# Installing apk on andoroidx86
+# default adb ports 1234,5555
+adb root
+adb kill-server
+adb connect <ANDROIDx86 IP>:5555
+adb install -r seqr.apk
+
+adb disconnect XXX
+-------------------------------------------------------------------------
+------------------------- GENYMOTION-------------------------------------
+
+#Install google framework
+http://stackoverflow.com/questions/17831990/how-do-you-install-google-frameworks-play-accounts-etc-on-a-genymotion-virt
+
+http://opengapps.org/
+
+## Google Account
+Wojtek Geny
+wojtek.geny@gmail.com
+pass: zuzalobuza
+
+#Install Google Play
+https://stackoverflow.com/questions/20121883/how-to-install-google-play-services-in-a-genymotion-vm-with-no-drag-and-drop-su
+https://dzone.com/articles/installing-google-play-services-in-genymotion-emul
+http://www.teamandroid.com/gapps/
+
+# configure Burp with Genymotion
+https://samsclass.info/128/proj/p1x-geny.htm
+https://nvisium.com/blog/2014/01/24/android-assessments-with-genymotion-burp/
+
+#Charles proxy
+Proxy: 10.0.3.2 and Port: 8888
+http://charlesproxy.com/getssl
+https://www.charlesproxy.com/documentation/using-charles/protocol-buffers/
+
+------------------------- DROZER-------------------------------------
+adb forward tcp:31415 tcp:31415
+adb -s device forward tcp:31415 tcp:31415
+permissions
+
+run app.package.list -f Seqr
+run app.package.info -a com.seamless.seqr_dev
+
+------------------------------------------------------
+
+###   Android x86     ###
+https://sourceforge.net/projects/android-x86/?source=typ_redirect
+http://www.android-x86.org/documents/virtualboxhowto
+
+# Intalling Android x86 on virtualBox:
+http://www.rickylford.com/install-android-5-1-on-virtualbox/
+
+# Updating Google Play Services
+http://www.apkmirror.com/apk/google-inc/google-play-services/google-play-services-9-8-77-release/
+http://www.androidapksfree.com/apk/google-play-services-apk-latest-version-download/
+
+#How to install Google Play Store (not needed, you can't use it on Ax86 anyway)
+(https://www.androidpit.com/forum/589877/how-to-install-google-play-store-if-it-is-not-pre-installed)
+
+
+
+#  Android x86 with Burp as a proxy
+iptables -t nat -A OUTPUT -p tcp -j DNAT --to-destination 192.168.0.103:8082
+iptables -t nat -A OUTPUT -o eth0 -p tcp
+
+
+# List (iptables controls five different tables: filter, nat, mangle, raw and security)
+iptables -t nat -vL
+# Flush changes:
+iptables -t nat -F
+

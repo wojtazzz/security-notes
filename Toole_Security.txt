@@ -1,0 +1,81 @@
+Toole Security  -polecane przez ziomeczka
+
+
+Burp + ZAP
+Arachni
+
+http://www.openvas.org/ albo komercyjny nessus
+
+xss.me
+
+html5sec.org
+
+
+
+
+Toole - znalezione przeze mnie:
+
+https://github.com/codingo/VHostScan
+
+
+testssl, wpscan
+
+SecLists from Github
+
+Kombajn do rekonesansu - raporty przydatne do OSCP:
+https://github.com/codingo/Reconnoitre
+
+
+
+Zródło danych:
+https://github.com/enaqx/awesome-pentest
+
+Cheatsheets!
+https://github.com/coreb1t/awesome-pentest-cheat-sheets
+
+
+Książki:
+
+
+Ghost in the wires, Sztuka Podstępu - coś Mitnick'a
+
+GreyHat Python / BlackHat Python - tworzenie tooli security z fajnym wyjaśnieniem  !!! KUPIĆ
+
+Penetration Testing with Kali Linux - pod kurs z certyfikatem
+
+https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641 - basic stuff
+
+https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441  !!! KUPIĆ
+
+https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470   Kobyła o webie
+
+
+Hardcore o przeglądarkach:
+cure53 github
+Cure 53 Browser Security White Paper - o przeglądarkach, uzupełnienie Tangled Web
+
+
+Blogi / stronki
+sekurak
+zaufana 3cia strona
+
+
+
+--------------------------------------------
+App testing (sages)
+
+======APKI=========
+Drozer na ubuntu
+
+statyczna analiza kodu:
+AndroBugs (na .apk)
+FindBugs + findbugs-android
+(wymagana jest konwersja .apk na javę, prtrz natatki)
+
+
+Android-x86 + BURP
+ustawić proxy (iptables)
+przestawić burpa w invisible mode
+
+xposed, Cydia - wyłączanie certificate pinning
+

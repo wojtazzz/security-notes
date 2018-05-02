@@ -1,0 +1,26 @@
+site:"seqr.com" -site:"developer.seqr.com" -site:"www.seqr.com" -site:"shopspot.seqr.com"
+
+
+shopspot inurl:dev -site:"developer.seqr.com" -site:"www.seqr.com"
+shopspot inurl:elasticbeanstalk -site:"developer.seqr.com" -site:"www.seqr.com"
+
+Wojtaz (@WojtazSeam) | Twitter
+https://twitter.com/wojtazseam
+Tłumaczenie strony
+CLEAN Classic for Men 60 ml http://shopspot-dev.elasticbeanstalk.com/campaigns/se/en/VJCjQoeA … #SEQR #shopspot. 0 retweets 0 likes. Reply. Retweet.
+
+http://shopspot-dev.elasticbeanstalk.com/home/us/en
+http://shopspot-prd-130.elasticbeanstalk.com/#!/pt/fi/campaigns/loUz6wkG
+https://xp-dev.com/sc/87505/164/%2Fother_prj%2Fseqr%2Fconf
+
+
+
+
+Discover subdomains:
+
+https://virustotal.com/en/domain/seqr.com/information/
+
+https://crt.sh/?q=%25seqr.com
+
+https://dnsdumpster.com/
+

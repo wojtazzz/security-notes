@@ -1,0 +1,21 @@
+
+10.2.3.121    OWASP
+
+10.2.3.138    KALI
+
+10.2.3.122    Metaspoitable
+
+
+
+
+
+- SQL Union
+- hibernate HSQL
+- sepa-demo.seqr.com
+- shellshock bash
+- DNS zone transfer
+-
+
+
+
+

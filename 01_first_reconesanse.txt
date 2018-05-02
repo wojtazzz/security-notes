@@ -1,0 +1,84 @@
+logme () { export SCRIPTFILE="$(date +%s)-${$}" echo "Starting tty logging to ~/scripts/${SCRIPTFILE}..." script -c /bin/bash -q "~/scripts/${SCRIPTFILE}" } scriptfile () { echo "${SCRIPTFILE}"; }
+
+
+1. scan a network
+nmap -sn -n -oG - x.x.x.0/24 | awk '/Up/{print $2}' > list.txt && nmap -v -A -Pn -n -iL list.txt > list_scan.txt
+
+2. Simple IP scan
+nmap IP  | tee nmap_results_challege_001.log
+
+3. TCP scan with detection
+nmap -sS -v -A IP
+
+4. UDP scan
+nmap -sU -sV -n --top-ports 200
+
+5. Automatic web scan
+uniscan -u IP -qweds
+
+6. Different web scan
+nikto -host IP
+
+7. Folder enumeration. Opt for using the medium wordlist for better results!
+GUI Dirbuster
+
+dirb IP # worse but cli
+
+
+More specific scans (non-web)
+8. Enumerate SNMP (UDP 161) if it’s open!
+snmp-check -t [IP] -c public
+
+9. Enumerate SMB (TCP 139/TCP 445) if it’s open!
+enum4linux [IP]
+
+10. Check for anonymous logins for FTP/SMB!
+
+    ftp [IP]
+        Username: anonymous Password: anonymous
+    smbclient -L \\[IP]
+        Username: root Password: None
+
+11. check for WebDav!(????) Nmap script scan should pick it up! If not…
+
+    davtest -url http(s)://[IP]
+
+12. check for VirtualHosts
+https://github.com/codingo/VHostScan
+
+
+
+Local discovery:
+# Discover hosts on network
+# Check arp table for hosts and ip numbers
+arp -n -a
+nmap -sP 192.168.1.1/24
+
+Discover services:
+sudo nmap -F 192.168.0.106
+sudo nmap -p 1-65535 -sV -sS -T4 10.10.10.100
+
+
+
+nmap
+
+-sS :           TCP SYN scan
+-v  :           OS version detection
+-A  :           Enable OS detection, version detection, script scanning, and traceroute
+-sV :
+
+-sn :           ping scan, disable port scan
+-n  :           never do DNS resolution
+-oG :           Output greppable - easy to grep nmap output
+-Pn :           Treat all hosts as online -- skip host discovery
+
+
+uniscan
+
+-q  Enable Directory checks
+-w  Enable File checks
+-e  Enable robots.txt and sitemap.xml check
+-d  Enable Dynamic checks
+-s  Enable Static checks
+
+-u  <url> example: https://www.example.com/
