@@ -65,9 +65,9 @@ nmap
 -sS :           TCP SYN scan
 -v  :           OS version detection
 -A  :           Enable OS detection, version detection, script scanning, and traceroute
--sV :
+-sV :           Probe open ports to determine service/version info
 
--sn :           ping scan, disable port scan
+-sn :           ping scan = no port scan
 -n  :           never do DNS resolution
 -oG :           Output greppable - easy to grep nmap output
 -Pn :           Treat all hosts as online -- skip host discovery

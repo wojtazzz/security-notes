@@ -1,0 +1,25 @@
+## Postgres must be running
+netstat -nltp
+
+## initiate DB before running metasploit for the first time
+msfdb reinit
+
+
+msfconsole
+
+search nat-pmp
+search cve:2018 type:exploit java
+use module_name
+back
+
+# Module selected
+info
+show options
+set RHOST 10.10.10.85
+show payloads
+show targets
+show advanced
+set parameter_name 0
+show encoders
+show nops
+show evaders
